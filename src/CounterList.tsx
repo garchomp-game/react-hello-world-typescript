@@ -1,18 +1,8 @@
 import Counter from "./Counter"
 import React from 'react'
-interface Props {
-    counters: Array<{
-        id: string
-        count: number
-        color: string
-    }>
-    countUp: any
-}
-
-
-class CounterList extends React.Component<Props, {}> {
+class CounterList extends React.Component<CounterListProps, {}> {
     render() {
-        let counters = this.props.counters.map((counter: any) => {
+        let counters = this.props.counters.map((counter: CounterInterface) => {
             return (
                 <Counter
                     counter={counter}
@@ -30,4 +20,3 @@ class CounterList extends React.Component<Props, {}> {
 }
 
 export default CounterList
-

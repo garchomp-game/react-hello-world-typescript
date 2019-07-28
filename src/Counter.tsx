@@ -1,13 +1,6 @@
 import React from 'react'
-interface Props {
-    counter: {
-        id: string
-        color: string
-        count: number
-    }
-    countUp: any
-}
-class Counter extends React.Component<Props, {}> {
+
+class Counter extends React.Component<CounterProps, {}> {
     render() {
         return (
             <li

@@ -1,21 +1,9 @@
 import React from 'react';
 import './App.css';
 import CounterList from "./CounterList";
-interface Props {
-}
 
-interface State {
-  counters: Array<{
-    id: string
-    count: number
-    color: string
-  }>
-  total: number
-}
-
-
-class App extends React.Component<Props, State> {
-  constructor(props: Props) {
+class App extends React.Component<EmptyProps, AppState> {
+  constructor(public props: EmptyProps) {
     super(props)
     this.state = {
       counters:  [
@@ -29,7 +17,7 @@ class App extends React.Component<Props, State> {
     };
     this.countUp = this.countUp.bind(this);
   }
-  countUp(counter: any): void {
+  countUp(counter: CounterInterface): void {
     this.setState(prevState => {
       const counters = prevState.counters.map(counter => {
         return {id: counter.id, count: counter.count, color: counter.color};
